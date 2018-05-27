@@ -66,41 +66,17 @@ class Stopwatch extends React.Component {
     // //
     // // const styleButton
 
-    return React.createElement(
-      "div",
-      { className: "watch" },
-      React.createElement(
-        "div",
-        { className: "controls" },
-        React.createElement(
-          "a",
-          { href: "#", className: "button", onClick: this.start },
-          "Start"
-        ),
-        React.createElement(
-          "a",
-          { href: "#", className: "button", onClick: this.stop },
-          "Stop"
-        )
-      ),
-      React.createElement(
-        "div",
-        { className: "stopwatch" },
-        React.createElement(
-          "span",
-          { className: "time" },
-          "MM:SS:MM"
-        ),
-        React.createElement(
-          "div",
-          null,
-          pad0(this.state.time.minutes),
-          ":",
-          pad0(this.state.time.seconds),
-          ":",
-          pad0(Math.floor(this.state.time.miliseconds))
-        )
-      )
+    return (
+      <div className="watch">
+        <div className="controls">
+          <a href="#" className="button" onClick={this.start} >Start</a>
+          <a href="#" className="button" onClick={this.stop} >Stop</a>
+        </div>
+        <div className="stopwatch">
+          <span className="time">MM:SS:MM</span>
+          <div>{pad0(this.state.time.minutes)}:{pad0(this.state.time.seconds)}:{pad0(Math.floor(this.state.time.miliseconds))}</div>
+        </div>
+      </div>
     );
   }
 }

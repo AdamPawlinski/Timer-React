@@ -2,20 +2,15 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Timer!</title>
+    <title>React Timer!</title>
     <link rel="stylesheet" type="text/css" href="styles/styles.css">
   </head>
   <body>
-    <section class="watch">
-      <nav class="controls">
-        <a href="#" class="button" id="start">Start</a>
-        <a href="#" class="button" id="stop">Stop</a>
-      </nav>
-      <span class="time">MM:SS:MM</span>
-      <div class="stopwatch">
-      </div>
-      <ul class="results"></ul>
-    </section>
-    <script type="text/javascript" src="script-compiled.js"></script>
+    <div id="stopwatch">
+    </div>
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://github.com/babel/babel-standalone/releases/download/release-6.26.0/babel.min.js"></script>
+    <script type="text/babel" src="./components/stopwatch.js"></script>
   </body>
 </html>
