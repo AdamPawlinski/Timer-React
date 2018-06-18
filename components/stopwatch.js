@@ -2,24 +2,22 @@ class Stopwatch extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      time: {
-        minutes: 0,
-        seconds: 0,
-        miliseconds: 0
-      },
+      minutes: 0,
+      seconds: 0,
+      miliseconds: 0,
       running: false
     };
   }
 
   start() {
     if (!this.state.running) {
-      this.setState.running = true;
+      this.setState({running: true});
       this.watch = setInterval(() => this.step(), 10);
     }
   }
 
   stop() {
-    this.setState.running = false;
+    this.setState({running: false});
     clearInterval(this.watch);
   }
 
@@ -29,14 +27,14 @@ class Stopwatch extends React.Component {
   }
 
   calculate() {
-    this.setState.time.miliseconds += 1;
-    if (this.state.time.miliseconds >= 100) {
-      this.setState.time.seconds += 1;
-      this.setState.time.miliseconds = 0;
+    this.setState.miliseconds += 1;
+    if (this.state.miliseconds >= 100) {
+      this.setState.seconds += 1;
+      this.setState.miliseconds = 0;
     }
-    if (this.state.time.seconds >= 60) {
-      this.setState.time.minutes += 1;
-      this.setState.time.seconds = 0;
+    if (this.state.seconds >= 60) {
+      this.setState.minutes += 1;
+      this.setState.seconds = 0;
     }
   }
 
@@ -49,7 +47,7 @@ class Stopwatch extends React.Component {
         </div>
         <div className="stopwatch">
           <span className="time">MM:SS:MM</span>
-          <div>{pad0(this.state.time.minutes)}:{pad0(this.state.time.seconds)}:{pad0(Math.floor(this.state.time.miliseconds))}</div>
+          <div>{pad0(this.state.minutes)}:{pad0(this.state.seconds)}:{pad0(Math.floor(this.state.miliseconds))}</div>
         </div>
       </div>
     );
