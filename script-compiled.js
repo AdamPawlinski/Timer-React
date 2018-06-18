@@ -13,13 +13,13 @@ class Stopwatch extends React.Component {
 
   start() {
     if (!this.state.running) {
-      this.state.running = true;
+      this.setState.running = true;
       this.watch = setInterval(() => this.step(), 10);
     }
   }
 
   stop() {
-    this.state.running = false;
+    this.setState.running = false;
     clearInterval(this.watch);
   }
 
@@ -29,43 +29,18 @@ class Stopwatch extends React.Component {
   }
 
   calculate() {
-    this.state.time.miliseconds += 1;
+    this.setState.time.miliseconds += 1;
     if (this.state.time.miliseconds >= 100) {
-      this.state.time.seconds += 1;
-      this.state.time.miliseconds = 0;
+      this.setState.time.seconds += 1;
+      this.setState.time.miliseconds = 0;
     }
     if (this.state.time.seconds >= 60) {
-      this.state.time.minutes += 1;
-      this.state.time.seconds = 0;
+      this.setState.time.minutes += 1;
+      this.setState.time.seconds = 0;
     }
   }
 
   render() {
-    // const styleControls = {
-    //   display: 'flex',
-    //   justifyContent: 'space-around',
-    //   flexDirection: 'row',
-    //   marginBottom: '50px'
-    // }
-    //
-    // const styleStopwatch = {
-    //   margin: '5px 115px 50px 115px',
-    //   textShadow: '3px 3px 3px #000',
-    //   border: '1px solid #000',
-    //   borderRadius: '5px',
-    //   background: '#4c4c4a',
-    //   color: '#f9e71d',
-    //   padding: '5px'
-    // }
-    //
-    // const styleTime = {
-    //   display: 'flex',
-    //   justifyContent: 'center',
-    //   fontSize: '20px'
-    // }
-    // //
-    // // const styleButton
-
     return React.createElement(
       "div",
       { className: "watch" },
@@ -74,12 +49,12 @@ class Stopwatch extends React.Component {
         { className: "controls" },
         React.createElement(
           "a",
-          { href: "#", className: "button", onClick: this.start },
+          { href: "#", className: "button", onClick: this.start.bind(this) },
           "Start"
         ),
         React.createElement(
           "a",
-          { href: "#", className: "button", onClick: this.stop },
+          { href: "#", className: "button", onClick: this.stop.bind(this) },
           "Stop"
         )
       ),
