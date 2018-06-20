@@ -27,14 +27,14 @@ class Stopwatch extends React.Component {
   }
 
   calculate() {
-    this.setState.miliseconds += 1;
+    this.setState({ miliseconds: this.state.miliseconds += 1 });
     if (this.state.miliseconds >= 100) {
-      this.setState.seconds += 1;
-      this.setState.miliseconds = 0;
+      this.setState({ seconds: this.state.seconds += 1 });
+      this.setState({ miliseconds: this.state.miliseconds = 0 });
     }
     if (this.state.seconds >= 60) {
-      this.setState.minutes += 1;
-      this.setState.seconds = 0;
+      this.setState({ minutes: this.state.minutes += 1 });
+      this.setState({ seconds: this.state.seconds = 0 });
     }
   }
 
@@ -46,12 +46,12 @@ class Stopwatch extends React.Component {
         "div",
         { className: "controls" },
         React.createElement(
-          "a",
+          "button",
           { href: "#", className: "link", onClick: this.start.bind(this) },
           "Start"
         ),
         React.createElement(
-          "a",
+          "button",
           { href: "#", className: "link", onClick: this.stop.bind(this) },
           "Stop"
         )
