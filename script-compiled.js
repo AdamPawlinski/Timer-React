@@ -47,12 +47,12 @@ class Stopwatch extends React.Component {
         { className: "controls" },
         React.createElement(
           "a",
-          { href: "#", className: "button", onClick: this.start.bind(this) },
+          { href: "#", className: "link", onClick: this.start.bind(this) },
           "Start"
         ),
         React.createElement(
           "a",
-          { href: "#", className: "button", onClick: this.stop.bind(this) },
+          { href: "#", className: "link", onClick: this.stop.bind(this) },
           "Stop"
         )
       ),
