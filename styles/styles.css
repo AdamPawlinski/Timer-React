@@ -43,7 +43,7 @@ body {
   padding: 5px;
 }
 
-.button {
+.link {
   width: 100px;
   border: 2px solid #4c4c4a;
   background-color: #42b3f4;
@@ -55,17 +55,17 @@ body {
   text-decoration: none;
 }
 
-.button:hover {
+.link:hover {
   color: #000;
   border:  2px solid #FFF;
 }
 
-.button:last-child {
+.link:last-child {
   border-color: #4c4c4a;
   background-color: #f44174;
 }
 
-.button:last-child:hover {
+.link:last-child:hover {
   color: #000;
   border:  2px solid #FFF;
 }
