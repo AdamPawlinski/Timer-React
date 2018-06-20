@@ -42,8 +42,8 @@ class Stopwatch extends React.Component {
     return (
       <div className="watch">
         <div className="controls">
-          <button href="#" className="link" onClick={this.start.bind(this)} >Start</button>
-          <button href="#" className="link" onClick={this.stop.bind(this)} >Stop</button>
+          <button type="button" className="button" onClick={this.start.bind(this)}>Start</button>
+          <button type="button" className="button" onClick={this.stop.bind(this)}>Stop</button>
         </div>
         <div className="stopwatch">
           <span className="time">MM:SS:MM</span>
